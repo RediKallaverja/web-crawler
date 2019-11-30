@@ -31,7 +31,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ApiService {
-        public ArrayList<Model> getGooglePosts(String url) throws IOException, Exception {     
+        public ArrayList<Model> getTopLibs(String url) throws IOException, Exception {     
             
             ArrayList<Model> response = new ArrayList<>();
             
@@ -56,7 +56,7 @@ public class ApiService {
             HashMap<String, Integer> countLibs = new HashMap<>();
 //          Read response from parallel threads
             for(Future<ArrayList<String>> javascriptLibs : resultList) {
-                
+//              Store in HashMap<String, Integer> libName, count  
                 for (String libName : javascriptLibs.get()) {         
                     String libActualName = libName.split("/")[libName.split("/").length-1];
                     if (countLibs.containsKey(libActualName)){
@@ -74,8 +74,7 @@ public class ApiService {
             List<Entry<String, Integer>> top5 = countLibs.entrySet().stream()
                                     .sorted(comparing(Entry::getValue, reverseOrder()))
                                     .limit(5)
-                                    .collect(toList());
-            
+                                    .collect(toList());            
            
 //          read top5 list  
             for (Entry<String, Integer> entry : top5) {

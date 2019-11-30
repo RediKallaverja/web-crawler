@@ -7,7 +7,6 @@ package com.example.webcrawler.async;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.concurrent.Callable;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

@@ -48,7 +48,7 @@ public class ApiServiceTest {
         String url = "https://www.google.com/search?q=test&num=5";
         ApiService instance = new ApiService();
         ArrayList<Model> expResult = null;
-        ArrayList<Model> result = instance.getGooglePosts(url);
+        ArrayList<Model> result = instance.getTopLibs(url);
         assertEquals(5, result.size());
 
     }

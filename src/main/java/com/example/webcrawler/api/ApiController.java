@@ -30,7 +30,7 @@ public class ApiController {
         int statusCode = 200;
         String url = "https://www.google.com/search?q=" + input + "&num=10";
         try {
-            response = service.getGooglePosts(url);
+            response = service.getTopLibs(url);
         } catch (Exception e) {
             statusCode = 500;
             response = new Fault("Fail", "Something went wrong. Try Again!", statusCode);
